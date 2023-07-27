@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add database context and cache
 builder.Services.AddDbContext<MyDatabaseContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Server=tcp:appdb20230701-server.database.windows.net,1433;Initial Catalog=appdb20230701-database;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")));
 builder.Services.AddDistributedMemoryCache();
 
 // Add services to the container.
